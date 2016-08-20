@@ -1,0 +1,48 @@
+header {
+  height: 50px;
+  border-bottom: 1px solid grey;
+}
+
+.select-users {
+  position: absolute;
+  right: 65px;
+  top: 15px;
+}
+
+.users, .admin {
+  position: absolute;
+  right: 0;
+}
+
+.admin {
+  display: none;
+}
+
+.favorites-list {
+  float: left;
+  width: 175px;
+  margin-left: 45px;
+  border: 1px solid red;
+}
+
+.favorites {
+  width: 170px;
+}
+
+.movie-list, .single-movie {
+  width: 610px;
+  margin-left: 225px;
+  border: 1px solid green;
+}
+
+.thumbnail {
+  width: 178px;
+  height: 100px;
+}
+
+footer {
+  clear: both;
+  height: 60px;
+  margin-top: 30px;
+  border: 1px solid purple;
+}
