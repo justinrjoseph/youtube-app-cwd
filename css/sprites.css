@@ -1,0 +1,94 @@
+.trash, 
+.trash-hover, 
+.delete, 
+.delete-hover, 
+.favorite, 
+.favorite-hover, 
+.insert, 
+.insert-hover, 
+.arrow, 
+.arrow-hover, 
+.profile-in, 
+.profile-out, 
+.success {
+	background: url('../img/sprites.png') no-repeat;
+}
+
+.trash {
+	width: 60px;
+	height: 60px;
+	background-position: 0 0;
+}
+
+.trash-hover {
+	width: 60px;
+	height: 60px;
+	background-position: 0 -61px;
+}
+
+.delete {
+	width: 20px;
+	height: 20px;
+	background-position: 0 -130px;
+}
+
+.delete-hover {
+	width: 20px;
+	height: 20px;
+	background-position: -21px -130px;
+}
+
+.favorite {
+	width: 20px;
+	height: 20px;
+	background-position: 0 -154px;
+}
+
+.favorite-hover {
+	width: 20px;
+	height: 20px;
+	background-position: -21px -154px;
+}
+
+.insert {
+	width: 20px;
+	height: 20px;
+	background-position: 0 -177px;
+}
+
+.insert-hover {
+	width: 20px;
+	height: 20px;
+	background-position: -21px -177px;
+}
+
+.arrow {
+	width: 10px;
+	height: 10px;
+	background-position: -47px -132px;
+}
+
+.arrow-hover {
+	width: 10px;
+	height: 10px;
+	background-position: -47px -142px;
+}
+
+.profile-in {
+	width: 30px;
+	height: 30px;
+	background-position: -33px -199px;
+}
+
+.profile-out {
+	width: 30px;
+	height: 30px;
+	background-position: 0 -199px;
+}
+
+.success {
+	width: 20px;
+	height: 20px;
+	background-position: -44px -177px;
+}
+
