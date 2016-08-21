@@ -157,6 +157,49 @@ header h1 {
   height: 100px;
 }
 
+.movie-player {
+  width: 608px;
+  height: 344px;
+}
+
+.single-movie h3 {
+  padding: 10px;
+  font-size: 1.3em;
+}
+
+.single-movie p {
+  padding: 10px;
+  font-size: .8em;
+}
+
+.actions {
+  position: relative;
+  height: 37px;
+  border-bottom: 1px solid #ccc;
+}
+
+.actions .add-remove {
+  position: absolute;
+  right: 10px;
+}
+
+.actions .add-remove p {
+  color: #999;
+  font-size: .75em;
+  font-weight: bold;
+}
+
+.actions .add-remove p:hover {
+  color: black;
+  border-bottom: 3px solid #993300;
+}
+
+.single-movie .description {
+  min-height: 80px;
+  font-size: .75em;
+  text-align: justify;
+}
+
 footer {
   clear: both;
   height: 60px;

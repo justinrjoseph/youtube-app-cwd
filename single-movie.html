@@ -3,6 +3,13 @@
   <head>
     <meta charset="UTF-8">
     <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/styles.css">
+    
+    <!--[if lt IE 9>
+      <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+      <script src="js/html5shiv-printshiv.js"></script>
+    <![endif]-->
+    
     <title>Instant Database Update Project</title>
   </head>
   
@@ -11,41 +18,42 @@
       <h1>Instant Database Update Project</h1>
     </header>
     
-    <nav>
-      <div>
+    <nav class="navigation">
+      <div class="select-users">
         <h2><a href="#">Logged-in user's name</a></h2>
       </div>
       
-      <ul>
+      <ul class="users">
         <li><a href="#">List of other users</a></li>
         <li><a href="#">List of other users</a></li>
         <li><a href="#">List of other users</a></li>
       </ul>
       
-      <ul>
+      <ul class="admin">
         <li><a href="#">Manage Users</a></li>
         <li><a href="#">Manage Moves</a></li>
       </ul>
     </nav>
     
-    <nav>
+    <nav class="favorites-list">
       <h2>Favorites</h2>
       
-      <ul>
+      <ul class="favorites">
         <li><a href="#">Movie Title</a></li>
         <li><a href="#">Movie Title</a></li>
         <li><a href="#">Movie Title</a></li>
       </ul>
     </nav>
     
-    <section>
-      Large movie image
-      
+    <section class="single-movie">
+      <a href="#"><img class="movie-player" alt="Movie Title" src="img/movie.png"></a>
       <h3>Movie Title</h3>
-      <div>
-        <p>Add to/Delete from Favorites</p>
+      <div class="actions">
+        <div class="add-remove">
+          <p>Add to/remove from favourites</p>
+        </div>
       </div>
-      <p>Description</p>
+      <p class="description">Description</p>
     </section>
     
     <footer>
