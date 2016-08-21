@@ -1,6 +1,19 @@
+* {
+  font-family: sans-serif;
+  font-size: 16px;
+}
+
 header {
   height: 50px;
+  background-color: #f1f1f1;
   border-bottom: 1px solid grey;
+}
+
+header h1 {
+  margin-left: 50px;
+  font-size: 1.5em;
+  font-weight: bold;
+  line-height: 50px;
 }
 
 .select-users {
@@ -9,13 +22,48 @@ header {
   top: 15px;
 }
 
+.select-users h2 a {
+  color: black;
+  font-size: .9em;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.select-users h2 a:hover {
+  color: #a32824;
+}
+
 .users, .admin {
   position: absolute;
   right: 0;
+  background-color: #f1f1f1;
+  border-left: 1px solid grey;
+  border-bottom: 1px solid grey;
+}
+
+.users li a, .admin li a {
+  display: block;
+  font-size: .75em; 
+  padding: 5px;
+}
+
+.users li a:hover, .admin li a:hover {
+  background-color: #a32824;
+  color: white;
+}
+
+.users a, .admin a {
+  color: black;
+  text-decoration: none;
+}
+
+.users {
+  width: 200px;
 }
 
 .admin {
   display: none;
+  width: 150px;
 }
 
 .favorites-list {
