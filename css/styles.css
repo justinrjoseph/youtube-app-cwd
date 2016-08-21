@@ -43,8 +43,8 @@ header h1 {
 
 .users li a, .admin li a {
   display: block;
-  font-size: .75em; 
   padding: 5px;
+  font-size: .75em; 
 }
 
 .users li a:hover, .admin li a:hover {
@@ -73,14 +73,84 @@ header h1 {
   border: 1px solid red;
 }
 
+.favorites-list h2 {
+  margin: 20px 0 10px 5px;
+  font-size: .8em;
+  font-weight: bold;
+}
+
 .favorites {
   width: 170px;
+}
+
+.favorites li a {
+  display: block;
+  padding: 7px 5px;
+  color: black;
+  font-size: .75em;
+  text-decoration: none;
+}
+
+.favorites li a:hover {
+  background-color: #a32824;
+  color: white;
 }
 
 .movie-list, .single-movie {
   width: 610px;
   margin-left: 225px;
-  border: 1px solid green;
+  border: 1px dotted grey;
+}
+
+.movie-list {
+  padding-top: 10px;
+}
+
+.movie-list h2, .single-movie h2 {
+  padding: 5px 10px 10px 10px;
+  font-size: 1.3em;
+}
+
+.movie-list ul {
+  padding-top: 20px;
+}
+
+.movie-list li {
+  padding-bottom: 10px;
+}
+
+.movie-list h3 a {
+  display: block;
+  margin-top: .5em;
+  margin-bottom: .5em;
+  color: #438bc5;
+  font-size: 1.1em;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.movie-list h3 a:hover {
+  text-decoration: underline;
+}
+
+.movie-list figcaption {
+  display: inline-block;
+  vertical-align: top;
+  padding-left: 20px;
+}
+
+.movie-list .description {
+  text-align: justify;
+  width: 400px;
+  padding-right: 10px;
+  font-size: .75em;
+}
+
+.welcome {
+  text-align: justify;
+  font-size: .8em;
+  padding: 10px 10px 20px 10px;
+  border-bottom: 1px solid grey;
 }
 
 .thumbnail {
