@@ -3,6 +3,13 @@
   <head>
     <meta charset="UTF-8">
     <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/styles.css">
+    
+    <!--[if lt IE 9>
+      <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+      <script src="js/html5shiv-printshiv.js"></script>
+    <![endif]-->
+    
     <title>Instant Database Update Project</title>
   </head>
   
@@ -11,55 +18,50 @@
       <h1>Instant Database Update Project</h1>
     </header>
     
-    <nav>
-      <div>
+    <nav class="navigation">
+      <div class="select-users">
         <h2><a href="#">Logged-in user's name</a></h2>
       </div>
       
-      <ul>
+      <ul class="users-menu">
         <li><a href="#">List of other users</a></li>
         <li><a href="#">List of other users</a></li>
         <li><a href="#">List of other users</a></li>
       </ul>
       
-      <ul>
+      <ul class="admin-menu">
         <li><a href="#">Manage Users</a></li>
         <li><a href="#">Manage Moves</a></li>
       </ul>
     </nav>
     
-    <nav>
-      <h2>Favorites</h2>
-      
-      <ul>
-        <li><a href="#">Movie Title</a></li>
-        <li><a href="#">Movie Title</a></li>
-        <li><a href="#">Movie Title</a></li>
-      </ul>
-    </nav>
-    
-    <section>
-      <div>
+    <section class="admin">
+      <div class="admin-users">
         <h2>Manage Users</h2>
+        
+        <table class="admin-table">
+          <tr>
+            <th class="data-column">First Name</th>
+            <th class="data-column">Last Name</th>
+            <th class="admin-column">Add/Delete</th>
+          </tr>
+          <tr class="data-row">
+            <td><input class="data" type="text" name="firstname" value="John"></td>
+            <td><input class="data" type="text" name="lastname" value="Adams"></td>
+            <td class="delete-cell"><div>Delete</div></td>
+          </tr>
+          <tr class="data-row">
+            <td><input class="data" type="text" name="firstname" value="John"></td>
+            <td><input class="data" type="text" name="lastname" value="Smith"></td>
+            <td class="delete-cell"><div>Delete</div></td>
+          </tr>
+          <tr class="new-data-row">
+            <td><input class="new-data" type="text" name="firstname" value=""></td>
+            <td><input class="new-data" type="text" name="lastname" value=""></td>
+            <td class="insert-cell"><div>Insert</div></td>
+          </tr>
+        </table>
       </div>
-      
-      <table>
-        <tr>
-          <th>First Name</th>
-          <th>Last Name</th>
-          <th>Add/Delete</th>
-        </tr>
-        <tr>
-          <td><input type="text" name="firstname" value="John"></td>
-          <td><input type="text" name="lastname" value="Adams"></td>
-          <td>Add/Delete</td>
-        </tr>
-        <tr>
-          <td><input type="text" name="firstname" value="John"></td>
-          <td><input type="text" name="lastname" value="Smith"></td>
-          <td>Add/Delete</td>
-        </tr>
-      </table>
     </section>
     
     <footer>

@@ -33,7 +33,7 @@ header h1 {
   color: #a32824;
 }
 
-.users, .admin {
+.users-menu, .admin-menu {
   position: absolute;
   right: 0;
   background-color: #f1f1f1;
@@ -41,27 +41,27 @@ header h1 {
   border-bottom: 1px solid grey;
 }
 
-.users li a, .admin li a {
+.users-menu li a, .admin-menu li a {
   display: block;
   padding: 5px;
   font-size: .75em; 
 }
 
-.users li a:hover, .admin li a:hover {
+.users-menu li a:hover, .admin-menu li a:hover {
   background-color: #a32824;
   color: white;
 }
 
-.users a, .admin a {
+.users-menu a, .admin-menu a {
   color: black;
   text-decoration: none;
 }
 
-.users {
+.users-menu {
   width: 200px;
 }
 
-.admin {
+.admin-menu {
   display: none;
   width: 150px;
 }
@@ -134,8 +134,8 @@ header h1 {
 
 .movie-list figcaption {
   display: inline-block;
-  vertical-align: top;
   padding-left: 20px;
+  vertical-align: top;
 }
 
 .movie-list .description {
@@ -147,9 +147,9 @@ header h1 {
 
 .welcome {
   text-align: justify;
-  font-size: .8em;
   padding: 10px 10px 20px 10px;
   border-bottom: 1px solid grey;
+  font-size: .8em;
 }
 
 .thumbnail {
@@ -198,6 +198,53 @@ header h1 {
   min-height: 80px;
   font-size: .75em;
   text-align: justify;
+}
+
+.admin-users {
+  margin-top: 40px;
+  margin-left: 50px;
+}
+
+.admin-users h2 {
+  margin-bottom: 20px;
+  font-size: 1.25em;
+}
+
+.admin-table {
+  border-spacing: 2px;
+  border-collapse: separate;
+}
+
+.admin-table th {
+  text-align: left;
+  background-color: #f1f1f1;
+  font-weight: bold;
+}
+
+.admin-table th, .admin-table td {
+  border: 1px solid black;
+}
+
+.admin-table th, .admin-table td, .admin-table input {
+  width: 200px;
+  height: 35px;
+}
+
+th.admin-column, td.delete-cell, td.insert-cell {
+  width: 80px;
+}
+
+.admin-table th, .admin-table input {
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+.admin-table input {
+  font-size: .9em;
+}
+
+.admin-table input:focus {
+  background-color: #fee5ac;
 }
 
 footer {
