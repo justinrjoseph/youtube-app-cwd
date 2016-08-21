@@ -247,6 +247,15 @@ th.admin-column, td.delete-cell, td.insert-cell {
   background-color: #fee5ac;
 }
 
+input {
+  outline: none;
+  border: none;
+}
+
+input::-ms-clear {
+  display: none;
+}
+
 footer {
   clear: both;
   height: 60px;
