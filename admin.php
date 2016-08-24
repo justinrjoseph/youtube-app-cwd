@@ -1,43 +1,8 @@
-<!doctype html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8">
-    <link rel="stylesheet" href="css/reset.css">
-    <link rel="stylesheet" href="css/styles.css">
-    <link rel="stylesheet" href="css/sprites.css">
+<?php require_once 'includes/head.inc.php'; ?>
+
+<?php require_once 'includes/header.inc.php'; ?>
     
-    <!--[if lt IE 9>
-      <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
-      <script src="js/html5shiv-printshiv.js"></script>
-    <![endif]-->
-    
-    <title>Instant Database Update Project</title>
-  </head>
-  
-  <body>
-    <header>
-      <h1>Instant Database Update Project</h1>
-    </header>
-    
-    <nav class="navigation">
-      <div class="select-users">
-        <h2><a href="#">Logged-in user's name</a></h2>
-      </div>
-      
-      <div class="profile logged-out"></div>
-      <div class="admin-button"></div>
-      
-      <ul class="users-menu">
-        <li><a href="#">List of other users</a></li>
-        <li><a href="#">List of other users</a></li>
-        <li><a href="#">List of other users</a></li>
-      </ul>
-      
-      <ul class="admin-menu">
-        <li><a href="#">Manage Users</a></li>
-        <li><a href="#">Manage Moves</a></li>
-      </ul>
-    </nav>
+<?php require_once 'includes/navigation.inc.php'; ?>
     
     <section class="admin">
       <div class="admin-users">
@@ -68,8 +33,4 @@
       </div>
     </section>
     
-    <footer>
-      <p>Instant Database Update Project</p>
-    </footer>
-  </body>
-</html>
+<?php require_once 'includes/footer.inc.php'; ?>
