@@ -112,6 +112,7 @@ header h1 {
 
 .movie-list, .single-movie {
   width: 610px;
+  margin-top: 15px;
   margin-left: 225px;
   border: 1px dotted grey;
 }
