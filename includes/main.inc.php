@@ -3,6 +3,7 @@
 $user_favorites = showMovies('favorites');
 $non_favorites = showMovies('non-favorites');
 $test_movies = testMovies();
+$test_favorite = testFavorite();
 
 if ( $user_favorites == '' ) {
   $favorites_title = 'You haven\'t chosen any movies yet as a Favorite.';

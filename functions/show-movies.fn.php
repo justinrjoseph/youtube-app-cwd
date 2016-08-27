@@ -3,7 +3,7 @@
 // Called in favorites.inc.php & movie-list.inc.php
 
 function showMovies($data) {
-  global $db, $user_id, $movie_id;
+  global $db, $user_id, $movie_id, $test_favorite;
   
   switch ($data) {
     case 'favorites':
@@ -70,16 +70,16 @@ function showMovies($data) {
         break;
       case 'single':
         if ( file_exists('img/movies/' . $id . '-tn.png') ) {
-          $thumbnail = 'img/movies/' . $id . '-tn.png';
+          $thumbnail = 'img/movies/' . $id . '.png';
         } else {
-          $thumbnail = 'img/movies/generic-tn.png';
+          $thumbnail = 'img/movies/generic.png';
         }
         
         $output .= '<img class="movie-player" alt=' . $title . ' src=' . $thumbnail . '>';
         $output .= '<h3>' . $title . '</h3>';
-        $output .= '<div class="actions>';
+        $output .= '<div class="actions">';
         $output .= '<div class="add-remove">';
-        $output .= '<p>Add To/Remove from Favorites</p>';
+        $output .= '<p>' . $test_favorite . '</p>';
         $output .= '</div>';
         $output .= '</div>';
         $output .= '<p class="description">' . $description . '</p>';
