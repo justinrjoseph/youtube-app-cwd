@@ -1,3 +1,5 @@
+<?php require_once 'includes/connect.inc.php'; ?>
+
 <?php require_once 'includes/get-variables.inc.php'; ?>
 
 <?php require_once 'includes/head.inc.php'; ?>

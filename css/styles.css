@@ -58,11 +58,11 @@ header h1 {
 }
 
 .users-menu {
-  display: none;
   width: 200px;
 }
 
 .admin-menu {
+  display: none;
   width: 150px;
 }
 
