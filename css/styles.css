@@ -52,6 +52,21 @@ header h1 {
   color: white;
 }
 
+.users-menu .logout {
+	border-top: 1px solid grey;
+	text-transform: uppercase;
+}
+
+.users-menu .logout a {
+	background-color: white;
+	color: black;
+}
+
+.users-menu .logout a:hover {
+	background-color: black;
+	color: white;
+}
+
 .users-menu a, .admin-menu a {
   color: black;
   text-decoration: none;

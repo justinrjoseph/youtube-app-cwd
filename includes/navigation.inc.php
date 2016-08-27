@@ -1,11 +1,28 @@
-<?php $users = showUsers(); ?>
+<?php
+
+$test_users = testUsers();
+
+switch ($test_users) {
+  case 'no_id'; case 'invalid_id':
+    $users = showUsers('all');
+    $heading = '<h2><a>Choose a movie goer</a></h2>';
+    $state = 'logged-out';
+    break;
+  case 'id_set':
+    $users = showUsers('others');
+    $heading = showUsers('current');
+    $state = 'logged-in';
+    break;
+}
+
+?>
 
     <nav class="navigation">
       <div class="select-users">
-        <h2><a href="#">Logged-in user's name</a></h2>
+        <?php echo $heading; ?>
       </div>
       
-      <div class="profile logged-out"></div>
+      <div class="profile <?php echo $state; ?>"></div>
       <div class="admin-button"></div>
       
       <?php echo $users; ?>

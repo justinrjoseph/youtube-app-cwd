@@ -1,5 +1,7 @@
 <?php set_include_path('./includes' . PATH_SEPARATOR . './functions'); ?>
 
+<?php require_once 'test-users.fn.php'; ?>
+
 <?php require_once 'show-users.fn.php'; ?>
 
 <?php require_once 'connect.inc.php'; ?>
