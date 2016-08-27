@@ -13,6 +13,11 @@ switch ($test_users) {
     $heading = showUsers('current');
     $state = 'logged-in';
     break;
+  case 'no_data':
+    $heading = '<h2><a href="admin.php?page=users">Add movie-goers</a></h2>';
+    $users = "";
+    $state = 'logged-out';
+    break;
 }
 
 ?>
@@ -45,6 +50,15 @@ switch ($test_users) {
     <div class="alert">
       <h2>Invalid user ID. Choose one of the movie goers from the menu on the right.</h2>  
     </div>
+<?php require_once 'footer.inc.php'; ?>
+<?php exit; ?>
+<?php endif; ?>
+
+<?php if ( $test_users == 'no_data' ) : ?>
+    <div class="message alert">
+      <h2>There are no movie-goers in the database. Please add records below.</h2>
+    </div>
+<?php require_once 'admin-users.inc.php'; ?>
 <?php require_once 'footer.inc.php'; ?>
 <?php exit; ?>
 <?php endif; ?>

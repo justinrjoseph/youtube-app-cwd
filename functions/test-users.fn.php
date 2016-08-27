@@ -5,6 +5,14 @@
 function testUsers() {
   global $db, $user_id;
   
+  $sql = "SELECT * FROM`movie_goers`";
+  $result = $db->query($sql);
+  $rows = $result->num_rows;
+  
+  if ( $rows < 1 ) {
+    return 'no_data';
+  }
+  
   if ( !isset($user_id) ) {
     return 'no_id';
   }
@@ -13,7 +21,10 @@ function testUsers() {
     return 'invalid_id';
   }
   
-  $stmt = $db->prepare("SELECT * FROM `movie_goers` WHERE `user_id` = ?");
+  $stmt = $db->prepare("SELECT *
+                        FROM `movie_goers`
+                        WHERE `user_id` = ?");
+                        
   $stmt->bind_param('i', $user_id);
   $stmt->execute();
   $stmt->store_result();
