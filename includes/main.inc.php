@@ -4,7 +4,36 @@ $user_favorites = showMovies('favorites');
 $non_favorites = showMovies('non-favorites');
 $test_movies = testMovies();
 
+if ( $user_favorites == '' ) {
+  $favorites_title = 'You haven\'t chosen any movies yet as a Favorite.';
+  $state = 'hidden';
+} else {
+  $favorites_title = 'Your Favorities';
+  $state = '';
+}
+
+if ( $non_favorites == '' ) {
+  $message = 'It looks like you love all the movies!';
+  $message .= ' If you wish, drag any movie title to the trash can to delete it from your Favorites list.';
+  $open_tag = '';
+  $close_tag = '';
+  $border = 'no-border-bottom';
+} else {
+  $message = 'Here are some movies to add to your Favorites list.';
+  $message .= ' Click on a movie\'s heart icon to add it to your Favorites list.';
+  $open_tag = '<ul>';
+  $close_tag = '</ul>';
+  $border = '';
+}
+
 switch ( $test_movies ) {
+  case 'no_data':
+    echo '<div class="message alert">';
+    echo '<h2>There are no movies in the database. Please add records below.</h2>';
+    echo '</div>';
+    require_once 'admin-movies.inc.php';
+    require_once 'footer.inc.php';
+    exit;
   case 'no_id':
     $greeting = showUsers('get_name');
     break;
@@ -21,35 +50,35 @@ switch ( $test_movies ) {
 
 ?>
 
-<?php if ( $test_movies == 'no_data' ) : ?>
-    <div class="message alert">
-      <h2>There are no movies in the database. Please add records below.</h2>
-    </div>
-    <?php require_once 'admin-movies.inc.php'; ?>
-    <?php require_once 'footer.inc.php'; ?>
-    <?php exit; ?>
-<?php else : ?>
     <nav class="favorites-list">
-      <h2>Favorites</h2>
+      <h2><?php echo $favorites_title; ?></h2>
       
       <ul class="favorites">
         <?php echo $user_favorites; ?>
       </ul>
       
-      <div class="trash"></div>
+      <div class="trash <?php echo $state; ?>"></div>
     </nav>
-<?php endif; ?>
 
-<?php if ( !isset($movie_id) ) : ?>
-    <section class="movie-list">
-      <?php echo $greeting; ?>
+<?php
+
+switch ( $test_movies ) {
+  case 'no_id':
+    echo '<section class="movie-list">';
+    echo $greeting;
       
-      <p class="welcome">Here are some movies you might like. Click the heart icon to add a movie to your list of favorites.</p>
-      
-      <?php echo $non_favorites; ?>
-    </section>
-<?php else : ?>
-    <section class="single-movie">
-      <?php echo $movie; ?>
-    </section>
-<?php endif; ?>
+    echo '<p class="welcome ' . $border . '">' . $message . '</p>';
+    
+    echo $open_tag;
+    echo $non_favorites;
+    echo $close_tag;
+    echo '</section>';
+    break;
+  case 'id_set':
+    echo '<section class="single-movie">';
+    echo $movie;
+    echo '</section>';
+    break;
+}
+
+?>

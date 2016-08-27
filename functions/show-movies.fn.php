@@ -38,21 +38,17 @@ function showMovies($data) {
   $stmt->bind_result($id, $title, $description);
   $stmt->execute();
   
-  if ( $data == 'non-favorites' ) {
-    $output = '<ul>';
-  } else {
-    $output = '';
-  }
+  $output = '';
   
   while ( $stmt->fetch() ) {
     $title = htmlentities($title, ENT_QUOTES, "UTF-8");
     $description = htmlentities($description, ENT_QUOTES, "UTF-8");
     
-    $output .= '<li>';
-    
     switch ( $data ) {
       case 'favorites':
+        $output .= '<li>';
         $output .= '<a href="/?user_id=' . $user_id . '&amp;movie_id=' . $id . '">' . $title . '</a>';
+        $output .= '</li>';
         break;
       case 'non-favorites':
         if ( file_exists('img/movies/' . $id . '-tn.png')) {
@@ -61,6 +57,7 @@ function showMovies($data) {
           $thumbnail = 'img/movies/generic-tn.png';
         }
         
+        $output .= '<li>';
         $output .= '<figure>';
         $output .= '<a href="/?movie_id=' . $id . '&amp;user_id=' . $user_id . '"><img src=' . $thumbnail . ' class="thumbnail" alt="Thumbnail"></a>';
         $output .= '<figcaption>';
@@ -69,6 +66,7 @@ function showMovies($data) {
         $output .= '<div class="add-remove favorite"></div>';
         $output .= '</figcaption>';
         $output .= '</figure>';
+        $output .- '</li>';
         break;
       case 'single':
         if ( file_exists('img/movies/' . $id . '-tn.png') ) {
@@ -87,12 +85,6 @@ function showMovies($data) {
         $output .= '<p class="description">' . $description . '</p>';
         break;
     }
-    
-    $output .= '</li>';
-  }
-  
-  if ( $data == 'non-favorites' ) {
-    $output .= '</ul>';
   }
   
   $stmt->close();
