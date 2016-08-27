@@ -13,7 +13,7 @@
       </ul>
       
       <ul class="admin-menu">
-        <li><a href="#">Manage Users</a></li>
-        <li><a href="#">Manage Moves</a></li>
+        <li><a href="admin.php?page=users">Manage Users</a></li>
+        <li><a href="admin.php?page=movies">Manage Moves</a></li>
       </ul>
     </nav>

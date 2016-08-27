@@ -58,11 +58,11 @@ header h1 {
 }
 
 .users-menu {
+  display: none;
   width: 200px;
 }
 
 .admin-menu {
-  display: none;
   width: 150px;
 }
 
@@ -200,12 +200,12 @@ header h1 {
   text-align: justify;
 }
 
-.admin-users {
+.admin-users, .admin-movies {
   margin-top: 40px;
   margin-left: 50px;
 }
 
-.admin-users h2 {
+.admin-users h2, .admin-movies h2 {
   margin-bottom: 20px;
   font-size: 1.25em;
 }
@@ -268,5 +268,19 @@ footer p {
   margin-left: 50px;
   line-height: 60px;
   font-size: .7em;
+  font-weight: bold;
+}
+
+.alert {
+  color: red;
+}
+
+.message {
+  margin-top: 40px;
+  margin-left: 50px;
+}
+
+.message h2 {
+  font-size: 1.25em;
   font-weight: bold;
 }

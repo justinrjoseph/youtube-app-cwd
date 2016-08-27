@@ -4,6 +4,10 @@ if ( isset($_GET['movie_id']) ) {
   $movie_id = $_GET['movie_id'];
 }
 
-echo $movie_id;
+if ( isset($_GET['page']) ) {
+  $page = $_GET['page'];
+} else {
+  $page = 'error';
+}
 
 ?>
