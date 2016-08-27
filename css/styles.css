@@ -286,16 +286,16 @@ footer p {
   font-weight: bold;
 }
 
-.alert {
-  color: red;
-}
-
-.message {
+.message, .alert {
   margin-top: 40px;
   margin-left: 50px;
 }
 
-.message h2 {
+.message h2, .alert h2 {
   font-size: 1.25em;
   font-weight: bold;
+}
+
+.alert {
+  color: red;
 }

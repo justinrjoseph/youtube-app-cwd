@@ -32,3 +32,19 @@ switch ($test_users) {
         <li><a href="admin.php?page=movies">Manage Moves</a></li>
       </ul>
     </nav>
+    
+<?php if ( $test_users == 'no_id' ) : ?>
+    <div class="message">
+      <h2>Please choose one of the movie goers from the menu on the right.</h2>  
+    </div>
+<?php require_once 'footer.inc.php'; ?>
+<?php exit; ?>
+<?php endif; ?>
+
+<?php if ( $test_users == 'invalid_id' ) : ?>
+    <div class="alert">
+      <h2>Invalid user ID. Choose one of the movie goers from the menu on the right.</h2>  
+    </div>
+<?php require_once 'footer.inc.php'; ?>
+<?php exit; ?>
+<?php endif; ?>

@@ -9,6 +9,10 @@ function testUsers() {
     return 'no_id';
   }
   
+  if ( !is_numeric($user_id) ) {
+    return 'invalid_id';
+  }
+  
   $stmt = $db->prepare("SELECT * FROM `movie_goers` WHERE `user_id` = ?");
   $stmt->bind_param('i', $user_id);
   $stmt->execute();
