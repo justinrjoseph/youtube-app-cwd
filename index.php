@@ -4,6 +4,8 @@
 
 <?php require_once 'show-users.fn.php'; ?>
 
+<?php require_once 'show-movies.fn.php'; ?>
+
 <?php require_once 'connect.inc.php'; ?>
 
 <?php require_once 'get-variables.inc.php'; ?>

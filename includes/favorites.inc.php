@@ -1,10 +1,10 @@
+<?php $user_favorites = showMovies('favorites'); ?>
+
     <nav class="favorites-list">
       <h2>Favorites</h2>
       
       <ul class="favorites">
-        <li><a href="#">Movie Title</a></li>
-        <li><a href="#">Movie Title</a></li>
-        <li><a href="#">Movie Title</a></li>
+        <?php echo $user_favorites; ?>
       </ul>
       
       <div class="trash"></div>
