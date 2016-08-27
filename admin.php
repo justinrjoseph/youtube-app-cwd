@@ -1,3 +1,5 @@
+<?php require_once 'functions/show-users.fn.php'; ?>
+
 <?php require_once 'includes/connect.inc.php'; ?>
 
 <?php require_once 'includes/get-variables.inc.php'; ?>
