@@ -14,7 +14,7 @@ switch ($test_users) {
     $state = 'logged-in';
     break;
   case 'no_data':
-    $heading = '<h2><a href="admin.php?page=users">Add movie-goers</a></h2>';
+    $heading = '<h2><a href="index.php?page=users">Add movie-goers</a></h2>';
     $users = "";
     $state = 'logged-out';
     break;

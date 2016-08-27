@@ -21,6 +21,14 @@ switch ( $test_movies ) {
 
 ?>
 
+<?php if ( $test_movies == 'no_data' ) : ?>
+    <div class="message alert">
+      <h2>There are no movies in the database. Please add records below.</h2>
+    </div>
+    <?php require_once 'admin-movies.inc.php'; ?>
+    <?php require_once 'footer.inc.php'; ?>
+    <?php exit; ?>
+<?php else : ?>
     <nav class="favorites-list">
       <h2>Favorites</h2>
       
@@ -30,7 +38,8 @@ switch ( $test_movies ) {
       
       <div class="trash"></div>
     </nav>
-    
+<?php endif; ?>
+
 <?php if ( !isset($movie_id) ) : ?>
     <section class="movie-list">
       <?php echo $greeting; ?>

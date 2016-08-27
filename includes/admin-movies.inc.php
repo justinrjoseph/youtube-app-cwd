@@ -1,6 +1,8 @@
         <section class="admin">
           <div class="admin-movies">
-            <h2>Manage Movies</h2>
+            <?php if ( !isset($test_movies) || $test_movies != 'no_data' ) : ?>
+              <h2>Manage Movies</h2>
+            <?php endif; ?>
             <table class="admin-table">
               <tr>
                 <th class="data-column">Title</th>

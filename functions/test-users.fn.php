@@ -5,7 +5,9 @@
 function testUsers() {
   global $db, $user_id;
   
-  $sql = "SELECT * FROM`movie_goers`";
+  $sql = "SELECT *
+          FROM `movie_goers`";
+          
   $result = $db->query($sql);
   $rows = $result->num_rows;
   

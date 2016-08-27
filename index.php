@@ -18,6 +18,6 @@
     
 <?php require_once 'navigation.inc.php'; ?>
     
-<?php require_once 'movies.inc.php'; ?>
+<?php require_once 'main.inc.php'; ?>
     
 <?php require_once 'footer.inc.php'; ?>
