@@ -33,6 +33,10 @@ function showMovies($data) {
                             WHERE `movie_id` = ?");
       $stmt->bind_param('i', $movie_id);
       break;
+    case 'all':
+      $stmt = $db->prepare("SELECT *
+                            FROM `movies`");
+      break;
   }
   
   $stmt->bind_result($id, $title, $description);

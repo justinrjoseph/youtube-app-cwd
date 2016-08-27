@@ -33,16 +33,28 @@ switch ($test_users) {
       <?php echo $users; ?>
       
       <ul class="admin-menu">
-        <li><a href="admin.php?page=users">Manage Users</a></li>
-        <li><a href="admin.php?page=movies">Manage Moves</a></li>
+        <li><a href="/?page=users">Manage Users</a></li>
+        <li><a href="/?page=movies">Manage Movies</a></li>
       </ul>
     </nav>
-    
+
+<?php if ( $page == 'users' ) : ?>
+  <?php include 'admin-users.inc.php'; ?>
+  <?php include 'footer.inc.php'; ?>
+  <?php exit; ?>
+<?php endif; ?>
+
+<?php if ( $page == 'movies' ) : ?>
+  <?php include 'admin-movies.inc.php'; ?>
+  <?php include 'footer.inc.php'; ?>
+  <?php exit; ?>
+<?php endif; ?>
+
 <?php if ( $test_users == 'no_id' ) : ?>
     <div class="message">
       <h2>Please choose one of the movie goers from the menu on the right.</h2>  
     </div>
-<?php require_once 'footer.inc.php'; ?>
+<?php include 'footer.inc.php'; ?>
 <?php exit; ?>
 <?php endif; ?>
 
@@ -50,7 +62,7 @@ switch ($test_users) {
     <div class="alert">
       <h2>Invalid user ID. Choose one of the movie goers from the menu on the right.</h2>  
     </div>
-<?php require_once 'footer.inc.php'; ?>
+<?php include 'footer.inc.php'; ?>
 <?php exit; ?>
 <?php endif; ?>
 
@@ -58,7 +70,7 @@ switch ($test_users) {
     <div class="message alert">
       <h2>There are no movie-goers in the database. Please add records below.</h2>
     </div>
-<?php require_once 'admin-users.inc.php'; ?>
-<?php require_once 'footer.inc.php'; ?>
+<?php include 'admin-users.inc.php'; ?>
+<?php include 'footer.inc.php'; ?>
 <?php exit; ?>
 <?php endif; ?>

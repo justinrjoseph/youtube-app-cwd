@@ -2,6 +2,7 @@
 
 $user_favorites = showMovies('favorites');
 $non_favorites = showMovies('non-favorites');
+// $movies = showMovies('all');
 $test_movies = testMovies();
 $test_favorite = testFavorite();
 
@@ -32,8 +33,8 @@ switch ( $test_movies ) {
     echo '<div class="message alert">';
     echo '<h2>There are no movies in the database. Please add records below.</h2>';
     echo '</div>';
-    require_once 'admin-movies.inc.php';
-    require_once 'footer.inc.php';
+    include 'admin-movies.inc.php';
+    include 'footer.inc.php';
     exit;
   case 'no_id':
     $greeting = showUsers('get_name');
