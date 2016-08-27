@@ -1,5 +1,5 @@
     <section class="single-movie">
-      <a href="#"><img class="movie-player" alt="Movie Title" src="img/movie.png"></a>
+      <a href="#"><img class="movie-player" alt="Movie Title" src="img/movies/generic.png"></a>
       <h3>Movie Title</h3>
       <div class="actions">
         <div class="add-remove">
