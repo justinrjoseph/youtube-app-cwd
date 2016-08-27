@@ -52,7 +52,7 @@ function showMovies($data) {
     
     switch ( $data ) {
       case 'favorites':
-        $output .= '<a href="/?user_id=' . $user_id . '&amp;movie_id=' . $movie_id . '">' . $title . '</a>';
+        $output .= '<a href="/?user_id=' . $user_id . '&amp;movie_id=' . $id . '">' . $title . '</a>';
         break;
       case 'non-favorites':
         if ( file_exists('img/movies/' . $id . '-tn.png')) {

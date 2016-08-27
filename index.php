@@ -4,6 +4,8 @@
 
 <?php require_once 'show-users.fn.php'; ?>
 
+<?php require_once 'test-movies.fn.php'; ?>
+
 <?php require_once 'show-movies.fn.php'; ?>
 
 <?php require_once 'connect.inc.php'; ?>
@@ -16,16 +18,6 @@
     
 <?php require_once 'navigation.inc.php'; ?>
     
-<?php require_once 'favorites.inc.php'; ?>
-    
-<?php
-
-  if ( isset($movie_id) ) {
-    require_once 'single-movie.inc.php';
-  } else {
-    require_once 'movie-list.inc.php';
-  }
-
-?>
+<?php require_once 'movies.inc.php'; ?>
     
 <?php require_once 'footer.inc.php'; ?>
