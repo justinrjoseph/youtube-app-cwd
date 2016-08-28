@@ -1,3 +1,5 @@
+<?php $users = showUsers('admin'); ?>
+
         <section class="admin">
           <div class="admin-users">
             <?php if ( $test_users != 'no_data' ) : ?>
@@ -9,16 +11,7 @@
                 <th class="data-column">Last Name</th>
                 <th class="admin-column">Insert/Delete</th>
               </tr>
-              <tr class="data-row">
-                <td><input class="data" type="text" name="firstname" value="Albert"></td>
-                <td><input class="data" type="text" name="lastname" value="Smith"></td>
-                <td class="delete-cell"><div class="delete"></div></td>
-              </tr>
-              <tr class="data-row">
-                <td><input class="data" type="text" name="firstname" value="John"></td>
-                <td><input class="data" type="text" name="lastname" value="Tomkins"></td>
-                <td class="delete-cell"><div class="success"></div></td>
-              </tr>
+              <?php echo $users; ?>
               <tr class="new-data-row">
                 <td><input class="new-data" type="text" name="firstname" value=""></td>
                 <td><input class="new-data" type="text" name="lastname" value=""></td>

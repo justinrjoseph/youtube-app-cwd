@@ -1,6 +1,6 @@
 <?php
 
-// Called in navigation.inc.php & movie-list.inc.php
+// Called in navigation.inc.php, movie-list.inc.php, & admin-users.inc.php
 
 function showUsers($data) {
   global $db, $user_id;
@@ -38,6 +38,11 @@ function showUsers($data) {
       $stmt->bind_param('i', $user_id);
       $tag = 'h2';
       break;
+    case 'admin':
+      $stmt = $db->prepare("SELECT *
+                            FROM `movie_goers`");
+      $tag = '';
+      break;
   }
   
   $stmt->bind_result($id, $firstname, $lastname);
@@ -53,14 +58,24 @@ function showUsers($data) {
     $firstname = htmlentities($firstname, ENT_QUOTES, "UTF-8");
     $lastname = htmlentities($lastname, ENT_QUOTES, "UTF-8");
     
-    if ( $data == 'get_name' ) {
-      $output .= '<'. $tag . '>';
-      $output .= 'Hi, ' . $firstname . ' ' . $lastname;
-      $output .= '</'. $tag . '>';
-    } else {
-      $output .= '<'. $tag . '>';
-      $output .= '<a href="/?user_id='. $id . '">'. $firstname . ' ' . $lastname. '</a>';
-      $output .= '</'. $tag . '>';
+    switch ( $data ) {
+      case 'get_name':
+        $output .= '<'. $tag . '>';
+        $output .= 'Hi, ' . $firstname . ' ' . $lastname;
+        $output .= '</'. $tag . '>';
+        break;
+      case 'all'; case 'others'; case 'current':
+        $output .= '<'. $tag . '>';
+        $output .= '<a href="/?user_id='. $id . '">'. $firstname . ' ' . $lastname. '</a>';
+        $output .= '</'. $tag . '>';
+        break;
+      case 'admin':
+        $output .= '<tr class="data-row">';
+        $output .= '<td><input class="data" type="text" name="firstname" value="' . $firstname . '"></td>';
+        $output .= '<td><input class="data" type="text" name="lastname" value="' . $lastname . '"></td>';
+        $output .= '<td class="delete-cell"><div class="delete"></div></td>';
+        $output .= '</tr>';
+        break;
     }
   }
   

@@ -1,6 +1,6 @@
 <?php
 
-// Called in favorites.inc.php & movie-list.inc.php
+// Called in main.inc.php
 
 function showMovies($data) {
   global $db, $user_id, $movie_id, $test_favorite;
