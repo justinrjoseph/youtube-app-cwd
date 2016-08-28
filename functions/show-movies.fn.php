@@ -33,7 +33,7 @@ function showMovies($data) {
                             WHERE `movie_id` = ?");
       $stmt->bind_param('i', $movie_id);
       break;
-    case 'all':
+    case 'admin':
       $stmt = $db->prepare("SELECT *
                             FROM `movies`");
       break;
@@ -87,6 +87,13 @@ function showMovies($data) {
         $output .= '</div>';
         $output .= '</div>';
         $output .= '<p class="description">' . $description . '</p>';
+        break;
+      case 'admin':
+        $output .= '<tr class="data-row">';
+        $output .= '<td><input class="data" type="text" name="title" value="' . $title . '"></td>';
+        $output .= '<td><input class="data description" type="text" name="description" value="' . $description . '"></td>';
+        $output .= '<td class="delete-cell"><div class="delete"></div></td>';
+        $output .= '</tr>';
         break;
     }
   }

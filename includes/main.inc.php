@@ -2,7 +2,6 @@
 
 $user_favorites = showMovies('favorites');
 $non_favorites = showMovies('non-favorites');
-// $movies = showMovies('all');
 $test_movies = testMovies();
 $test_favorite = testFavorite();
 

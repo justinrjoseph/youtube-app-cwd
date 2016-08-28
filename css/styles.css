@@ -266,6 +266,28 @@ th.admin-column, td.delete-cell, td.insert-cell {
   background-color: #fee5ac;
 }
 
+.insert {
+  background-position: 0 -117px;
+  width: 20px;
+  height: 20px;
+  margin-left: 40px;
+}
+
+.admin-table .delete {
+  background-position: 0 -130px;
+  width: 20px;
+  height: 20px;
+  margin-left: 40px;
+}
+
+.admin-table .delete:hover {
+  background-position: -21px -130px;
+}
+
+.admin-table .description {
+  width: 700px;
+}
+
 input {
   outline: none;
   border: none;
