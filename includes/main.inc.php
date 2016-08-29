@@ -5,26 +5,25 @@ $non_favorites = showMovies('non-favorites');
 $test_movies = testMovies();
 $test_favorite = testFavorite();
 
+$message = 'Here are some movies to add to your Favorites list.';
+$message .= ' Click on a movie\'s heart icon to add it to your Favorites list.';
+$favorites_title = 'Your Favorites';
+$trash_state = '';
+$open_tag = '<ul class="non-favorites">';
+$welcome_class = '';
+
 if ( $user_favorites == '' ) {
-  $favorites_title = 'You haven\'t chosen any movies yet as a Favorite.';
-  $state = 'hidden';
-} else {
-  $favorites_title = 'Your Favorities';
-  $state = '';
+  $message = 'You haven\'t chosen any movies as a Favorite yet.';
+  $message .= ' Mouse over any movie and click the heart icon to add it to your Favorites.';
+  $favorites_title = 'You haven\'t chosen a movie as a Favorite yet.';
+  $trash_state = 'hidden';
 }
 
 if ( $non_favorites == '' ) {
   $message = 'It looks like you love all the movies!';
-  $message .= ' If you wish, drag any movie title to the trash can to delete it from your Favorites list.';
-  $open_tag = '';
-  $close_tag = '';
-  $border = 'no-border-bottom';
-} else {
-  $message = 'Here are some movies to add to your Favorites list.';
-  $message .= ' Click on a movie\'s heart icon to add it to your Favorites list.';
-  $open_tag = '<ul class="non-favorites">';
-  $close_tag = '</ul>';
-  $border = '';
+  $message .= ' If you wish, drag any movie title to the trash can to delete it from your Favorites.';
+  $open_tag = '<ul class="non-favorites hidden">';
+  $welcome_class = 'no-border-bottom';
 }
 
 switch ( $test_movies ) {
@@ -58,7 +57,7 @@ switch ( $test_movies ) {
         <?php echo $user_favorites; ?>
       </ul>
       
-      <div class="trash <?php echo $state; ?>"></div>
+      <div class="trash <?php echo $trash_state; ?>"></div>
     </nav>
 
 <?php
@@ -72,7 +71,7 @@ switch ( $test_movies ) {
     
     echo $open_tag;
     echo $non_favorites;
-    echo $close_tag;
+    echo '</ul>';
     echo '</section>';
     break;
   case 'id_set':
