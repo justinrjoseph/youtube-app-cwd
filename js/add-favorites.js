@@ -16,8 +16,6 @@ $(document).ready(function() {
         $id = $id[1];
         $title = $this.siblings('h3').text();
         $description = $this.siblings('.description').text();
-        console.log($userID);
-        console.log($id);
         
         $.ajax({
             url: 'ajax/add-favorites.ajax.php',

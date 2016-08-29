@@ -47,7 +47,7 @@
 	background-position: 0 0;
 }
 
-.trash:hover {
+.trash:hover, .trash_hover {
 	background-position: 0 -61px;
 }
 

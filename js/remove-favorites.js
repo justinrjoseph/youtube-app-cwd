@@ -10,11 +10,11 @@ $(document).ready(function() {
     $('.trash').droppable({
         accept: '.favorites li', 
         drop: function(event, ui) {
-            $id = $(ui.draggable).attr('id').split('_');
+            $this = $(ui.draggable);
+            $id = $this.attr('id').split('-');
             $id = $id[1];
-            
-            $this = $(ui.draggable);  
-            $title = $(ui.draggable).text();
+            $title = $this.text();
+            $description = $this.attr('title');
             
             $.ajax({
                 url: 'ajax/remove-favorites.ajax.php',
@@ -25,9 +25,22 @@ $(document).ready(function() {
                 },
                 beforeSend: function() {
                     $this.remove();
+                    $('.trash').addClass('trash_hover')
                 },
                 success: function() {
-                    $("ul.non-favorites").append('<li class="movie-list" id="movie-"' + $id + '>' + $title + '</li>');
+                    $output =  '<li id="nonfavorite-' + $id + '">';
+                    $output += '<figure>';
+                    $output += '<a href="/?movie_id=' + $id + '&amp;user_id=' + $userID + '"><img src="img/movies/' + $id + '-tn.png" class="thumbnail" alt="' + $title + '"></a>';
+                    $output += '<figcaption>';
+                    $output += '<h3><a href="/?movie_id=' + $id + '&amp;user_id=' + $userID + '">' + $title + '</a></h3>';
+                    $output += '<div class="description">' + $description + '</div>';
+                    $output += '<div class="add"></div>';
+                    $output += '</figcaption>';
+                    $output += '</figure>';
+                    $output += '</li>';
+                    
+                    $("ul.non-favorites").prepend($output);
+                    $('.trash').removeClass('trash_hover')
                 }
             });
         }

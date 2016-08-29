@@ -9,7 +9,7 @@ $stmt = $db->prepare("DELETE
                       FROM `favourites` 
                       WHERE `movie_id` = ? && `user_id` = ?");
 
-$stmt->bind_param('ii', $movie_id, $user_i);
+$stmt->bind_param('ii', $movie_id, $user_id);
 $stmt->execute();
 $stmt->close();
 
