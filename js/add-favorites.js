@@ -38,7 +38,7 @@ $(document).ready(function() {
                 
                 $('ul.favorites').append($output);
                 
-                $(".favorites li#favorite-" + $id).draggable({
+                $('.favorites li#favorite-' + $id).draggable({
                    helper: 'clone'            
                 });                
             }

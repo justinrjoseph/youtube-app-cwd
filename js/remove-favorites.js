@@ -39,7 +39,7 @@ $(document).ready(function() {
                     $output += '</figure>';
                     $output += '</li>';
                     
-                    $("ul.non-favorites").prepend($output);
+                    $('ul.non-favorites').prepend($output);
                     $('.trash').removeClass('trash_hover')
                 }
             });

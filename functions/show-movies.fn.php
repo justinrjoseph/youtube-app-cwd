@@ -79,10 +79,16 @@ function showMovies($data) {
           $thumbnail = 'img/movies/generic.png';
         }
         
+        if ( $test_favorite == 'Add to Favorites' ) {
+          $action = 'add';
+        } else {
+          $action = 'remove';
+        }
+        
         $output .= '<img class="movie-player" alt=' . $title . ' src=' . $thumbnail . '>';
-        $output .= '<h3>' . $title . '</h3>';
+        $output .= '<h3 class="title">' . $title . '</h3>';
         $output .= '<div class="actions">';
-        $output .= '<div class="add-remove">';
+        $output .= '<div id="single-'. $id .'" class="add-remove ' . $action . '">';
         $output .= '<p>' . $test_favorite . '</p>';
         $output .= '</div>';
         $output .= '</div>';
