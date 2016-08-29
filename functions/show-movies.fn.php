@@ -50,7 +50,7 @@ function showMovies($data) {
     
     switch ( $data ) {
       case 'favorites':
-        $output .= '<li id="favorite-' . $id . '">';
+        $output .= '<li title="' . $description . '" id="favorite-' . $id . '">';
         $output .= '<a href="/?user_id=' . $user_id . '&amp;movie_id=' . $id . '">' . $title . '</a>';
         $output .= '</li>';
         break;

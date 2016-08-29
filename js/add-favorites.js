@@ -9,11 +9,15 @@ $(document).ready(function() {
         if ( $requestRunning ) {
             return;
         }
-
-        $id = ($(this).attr('id').split('_'));
-        $id = $id[1];
-        $title = $(this).text();
+        
         $this = $(this);
+        $movie = $this.closest('li');
+        $id = $movie.attr('id').split('-');
+        $id = $id[1];
+        $title = $this.siblings('h3').text();
+        $description = $this.siblings('.description').text();
+        console.log($userID);
+        console.log($id);
         
         $.ajax({
             url: 'ajax/add-favorites.ajax.php',
@@ -24,12 +28,19 @@ $(document).ready(function() {
             },
             beforeSend: function() {
                 $requestRunning = true;
-                $this.remove();
+                $movie.remove();
             },
             success: function() {
                 $requestRunning = false;
-                $('ul.favorites').append('<li class="movie-list" id="movie_"' + $id + '>' + $title + '</li>');
-                $(".favorites li#movie-" + $id).draggable({
+                
+                $output =  '<li title="' + $description + '" id="favorite-' + $id + '">';
+                $output += '<a href="/?user_id=' + $userID +'"&amp;movie_id="' + $id + '">';
+                $output += $title;
+                $output += '</a></li>';
+                
+                $('ul.favorites').append($output);
+                
+                $(".favorites li#favorite-" + $id).draggable({
                    helper: 'clone'            
                 });                
             }
