@@ -30,7 +30,7 @@ $(document).ready(function() {
                 success: function() {
                     $output =  '<li id="nonfavorite-' + $id + '">';
                     $output += '<figure>';
-                    $output += '<a href="/?movie_id=' + $id + '&amp;user_id=' + $userID + '"><img src="img/movies/' + $id + '-tn.png" class="thumbnail" alt="' + $title + '"></a>';
+                    $output += '<a href="/?movie_id=' + $id + '&amp;user_id=' + $userID + '"><img src="img/movies/' + $id + '-tn.png" class="thumbnail" alt="' + $title + '" onerror=this.src="generic-tn.png"></a>';
                     $output += '<figcaption>';
                     $output += '<h3><a href="/?movie_id=' + $id + '&amp;user_id=' + $userID + '">' + $title + '</a></h3>';
                     $output += '<div class="description">' + $description + '</div>';
