@@ -1,7 +1,7 @@
 .profile, 
 .admin-button, 
 .trash, 
-.favorite, 
+.add, 
 .delete, 
 .insert, 
 .success {
@@ -51,21 +51,22 @@
 	background-position: 0 -61px;
 }
 
-.favorite {
+.add {
 	width: 20px;
 	height: 20px;
 	background-position: 0 -154px;
 }
 
-.favorite:hover {
+.add:hover {
 	background-position: -21px -154px;
+	cursor: pointer;
 }
 
 .movie-list li {
 	position: relative;
 }
 
-.movie-list li .add-remove {
+.movie-list li .add {
 	position: absolute;
 	top: 10px;
 	right: 30px;

@@ -50,7 +50,7 @@ function showMovies($data) {
     
     switch ( $data ) {
       case 'favorites':
-        $output .= '<li>';
+        $output .= '<li id="favorite-' . $id . '">';
         $output .= '<a href="/?user_id=' . $user_id . '&amp;movie_id=' . $id . '">' . $title . '</a>';
         $output .= '</li>';
         break;
@@ -61,13 +61,13 @@ function showMovies($data) {
           $thumbnail = 'img/movies/generic-tn.png';
         }
         
-        $output .= '<li>';
+        $output .= '<li id="nonfavorite-' . $id . '">';
         $output .= '<figure>';
         $output .= '<a href="/?movie_id=' . $id . '&amp;user_id=' . $user_id . '"><img src=' . $thumbnail . ' class="thumbnail" alt="Thumbnail"></a>';
         $output .= '<figcaption>';
         $output .= '<h3><a href="/?movie_id=' . $id . '&amp;user_id=' . $user_id . '">' . $title . '</a></h3>';
         $output .= '<div class="description">' . $description . '</div>';
-        $output .= '<div class="add-remove favorite"></div>';
+        $output .= '<div class="add"></div>';
         $output .= '</figcaption>';
         $output .= '</figure>';
         $output .- '</li>';

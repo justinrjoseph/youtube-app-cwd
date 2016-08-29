@@ -22,7 +22,7 @@ if ( $non_favorites == '' ) {
 } else {
   $message = 'Here are some movies to add to your Favorites list.';
   $message .= ' Click on a movie\'s heart icon to add it to your Favorites list.';
-  $open_tag = '<ul>';
+  $open_tag = '<ul class="non-favorites">';
   $close_tag = '</ul>';
   $border = '';
 }
