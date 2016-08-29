@@ -1,4 +1,8 @@
 $(document).ready(function() {
+    $(this).on('mouseover mouseout', '.non-favorites li', function() {
+        $('.add', this).toggleClass('favorite');
+    });
+    
     $requestRunning = false;
     
     $(document).on('click', '.non-favorites .add', function() {
