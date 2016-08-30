@@ -5,7 +5,7 @@ $(document).ready(function() {
     
     $requestRunning = false;
     
-    $(document).on('click', '.non-favorites .add', function() {
+    $(this).on('click', '.non-favorites .add', function() {
         if ( $requestRunning ) {
             return;
         }

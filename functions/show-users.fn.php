@@ -73,7 +73,7 @@ function showUsers($data) {
         $output .= '<tr id="user-' . $id . '" class="data-row">';
         $output .= '<td><input class="data" type="text" name="firstname" value="' . $firstname . '"></td>';
         $output .= '<td><input class="data" type="text" name="lastname" value="' . $lastname . '"></td>';
-        $output .= '<td class="delete-cell"><div class="delete"></div></td>';
+        $output .= '<td class="delete-cell"><div class="delete hidden"></div></td>';
         $output .= '</tr>';
         break;
     }

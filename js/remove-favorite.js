@@ -1,7 +1,7 @@
 $(document).ready(function() {
     $requestRunning = false;
     
-    $(document).on('click', '.actions .remove', function() {
+    $(this).on('click', '.actions .remove', function() {
         if ( $requestRunning ) {
             return;
         }
