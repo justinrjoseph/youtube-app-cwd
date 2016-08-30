@@ -25,7 +25,10 @@ $(document).ready(function() {
                 },
                 beforeSend: function() {
                     $this.remove();
-                    $('.trash').addClass('trash_hover')
+                    $('.trash').addClass('trash_hover');
+                    $('.success').removeClass('success');
+                    $('.loader-large').removeClass('hidden');
+                    $('body').not('loader-large').addClass('dim');
                 },
                 success: function() {
                     $output =  '<li id="nonfavorite-' + $id + '">';
@@ -40,6 +43,17 @@ $(document).ready(function() {
                     $output += '</li>';
                     
                     $('ul.non-favorites').prepend($output);
+                    
+                    $added = $('li#nonfavorite-' + $id + ' .add');
+                    $added.removeClass('favorite').addClass('add success');
+                    
+                    $('.loader-large').addClass('hidden');
+                    $('body').not('loader-large').removeClass('dim');
+                    
+                    $('.non-favorites li').on('mouseover', function() {
+                       $('.success').removeClass('success');
+                    });
+                    
                     $('.trash').removeClass('trash_hover');
                     
                     $('p.welcome').text('').removeClass('like-all like-none no-border-bottom').addClass('like-some');

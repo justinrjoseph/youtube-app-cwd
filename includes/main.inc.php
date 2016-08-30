@@ -73,11 +73,13 @@ switch ( $test_movies ) {
     echo $non_favorites;
     echo '</ul>';
     echo '</section>';
+    echo '<div class="loader-large hidden"></div>';
     break;
   case 'id_set':
     echo '<section class="single-movie">';
     echo $movie;
     echo '</section>';
+    echo '<div class="loader-large hidden"></div>';
     break;
 }
 

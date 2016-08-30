@@ -21,6 +21,8 @@ $(document).ready(function() {
             },
             beforeSend: function() {
                 $requestRunning = true;
+                $('.loader-large').removeClass('hidden');
+                $('body').not('loader-large').addClass('dim');
             },
             success: function() {
                 $requestRunning = false;
@@ -34,6 +36,16 @@ $(document).ready(function() {
                 
                 $('.favorites li#favorite-' + $id).draggable({
                    helper: 'clone'            
+                });
+                
+                $added = $('li#favorite-' + $id);
+                $added.addClass('highlight');
+                
+                $('.loader-large').addClass('hidden');
+                $('body').not('loader-large').removeClass('dim');
+                
+                $('.favorites li').on('mouseover', function() {
+                   $('.highlight').removeClass('highlight');
                 });
                 
                 $this.html('<p>Remove from Favorites</p>').removeClass('add').addClass('remove');

@@ -94,9 +94,35 @@
 	background-position: -21px -177px;
 }
 
+.success {
+	background-position: -42px -177px;
+}
+
 .admin-table .success {
 	width: 40px;
 	height: 20px;
 	margin-left: 40px;
-	background-position: -42px -177px;
+}
+
+.non-favorites .success {
+	width: 20px;
+	height: 20px;
+}
+
+.favorites .highlight {
+	background-color: orange;
+	border: 1px solid red;
+}
+
+.loader-large {
+	background-image: url('../img/loader-large.png');
+	position: absolute;
+	top: 430px;
+	left: 500px;
+	height: 50px;
+	width: 50px;
+}
+
+.dim {
+	opacity: .5;
 }

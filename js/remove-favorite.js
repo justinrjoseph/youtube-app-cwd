@@ -20,6 +20,8 @@ $(document).ready(function() {
             beforeSend: function() {
                 $requestRunning = true;
                 $('.trash').addClass('trash_hover');
+                $('.loader-large').removeClass('hidden');
+                $('body').not('loader-large').addClass('dim');
             },
             success: function() {
                 $requestRunning = false;
@@ -37,6 +39,9 @@ $(document).ready(function() {
                     $('.favorites-list h2').text('You haven\'t chosen a movie as a Favorite yet.');
                     $('.non-favorites').removeClass('hidden');
                 }
+                
+                $('.loader-large').addClass('hidden');
+                $('body').not('loader-large').removeClass('dim');
             }
         });
     });
