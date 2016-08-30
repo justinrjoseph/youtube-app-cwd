@@ -32,7 +32,7 @@ switch ($test_users) {
       
       <?php echo $users; ?>
       
-      <ul class="admin-menu">
+      <ul class="admin-menu hidden">
         <li><a href="/?page=users">Manage Users</a></li>
         <li><a href="/?page=movies">Manage Movies</a></li>
       </ul>

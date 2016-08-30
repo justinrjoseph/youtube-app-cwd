@@ -49,7 +49,7 @@ function showUsers($data) {
   $stmt->execute();
   
   if ( $tag == 'li' ) {
-    $output = '<ul class="users-menu">';
+    $output = '<ul class="users-menu hidden">';
   } else {
     $output = '';
   }
