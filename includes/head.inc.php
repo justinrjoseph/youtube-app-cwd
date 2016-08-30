@@ -10,7 +10,10 @@
       <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
       <script src="js/html5shiv-printshiv.js"></script>
     <![endif]-->
-    <script>var $userID  = "<?php echo $user_id; ?>"</script>
+    
+    <?php if ( isset($user_id) ) : ?>
+      <script>var $userID  = "<?php echo $user_id; ?>"</script>
+    <?php endif; ?>
     
     <title>Instant Database Update Project</title>
   </head>
