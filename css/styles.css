@@ -333,3 +333,15 @@ footer p {
 .no-border-bottom {
   border-bottom: none;
 }
+
+.like-none:after {
+  content: 'You haven\'t chosen any movies as a Favorite yet. Mouse over any movie and click the heart icon to add it to your Favorites.';
+}
+
+.like-some:after {
+  content: 'Here are some movies to add to your Favorites list. Click on a movie\'s heart icon to add it to your Favorites list.';
+}
+
+.like-all:after {
+  content: 'It looks like you love all the movies! If you wish, drag any movie title to the trash can to delete it from your Favorites.';
+}

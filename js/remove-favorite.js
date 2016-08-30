@@ -28,6 +28,15 @@ $(document).ready(function() {
                 $this.html('<p>Add to Favorites</p>').removeClass('remove').addClass('add');
                 
                 $('li#favorite-' + $id).remove();
+                
+                $('.trash, .favorites, .non-favorites').removeClass('hidden');
+                $('.favorites-list h2').text('Favorites');
+                
+                if ( $('.favorites li').length === 0 ) {
+                    $('.trash, .favorites, .non-favorites').addClass('hidden');
+                    $('.favorites-list h2').text('You haven\'t chosen a movie as a Favorite yet.');
+                    $('.non-favorites').removeClass('hidden');
+                }
             }
         });
     });

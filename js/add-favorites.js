@@ -40,7 +40,25 @@ $(document).ready(function() {
                 
                 $('.favorites li#favorite-' + $id).draggable({
                    helper: 'clone'            
-                });                
+                });
+                
+                $('p.welcome').text('').removeClass('like-all like-none no-border-bottom').addClass('like-some');
+                $('.trash, .favorites, .non-favorites').removeClass('hidden');
+                $('.favorites-list h2').text('Favorites');
+                
+                if ( $('.favorites li').length === 0 ) {
+                    $('p.welcome').text('').removeClass('like-some').addClass('like-none');
+                    $('.trash, .favorites, .non-favorites').addClass('hidden');
+                    $('.favorites-list h2').text('You haven\'t chosen a movie as a Favorite yet.');
+                    $('.non-favorites').removeClass('hidden');
+                }
+                
+                if ( $('.non-favorites li').length === 0 ) {
+                    $('p.welcome').text('').removeClass('like-some').addClass('like-all no-border-bottom');
+                    $('.trash, .favorites').removeClass('hidden');
+                    $('.non-favorites').addClass('hidden');
+                    $('.favorites-list h2').text('Favorites');
+                }
             }
         });
     });

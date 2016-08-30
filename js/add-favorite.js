@@ -37,6 +37,21 @@ $(document).ready(function() {
                 });
                 
                 $this.html('<p>Remove from Favorites</p>').removeClass('add').addClass('remove');
+                
+                $('.trash, .favorites, .non-favorites').removeClass('hidden');
+                $('.favorites-list h2').text('Favorites');
+                
+                if ( $('.favorites li').length === 0 ) {
+                    $('.trash, .favorites, .non-favorites').addClass('hidden');
+                    $('.favorites-list h2').text('You haven\'t chosen a movie as a Favorite yet.');
+                    $('.non-favorites').removeClass('hidden');
+                }
+                
+                if ( $('.non-favorites li').length === 0 ) {
+                    $('.trash, .favorites').removeClass('hidden');
+                    $('.non-favorites').addClass('hidden');
+                    $('.favorites-list h2').text('Favorites');
+                }
             }
         });
     });
