@@ -281,6 +281,7 @@ th.admin-column, td.delete-cell, td.insert-cell {
 
 .admin-table .delete:hover {
   background-position: -21px -130px;
+  cursor: pointer;
 }
 
 .admin-table .description {

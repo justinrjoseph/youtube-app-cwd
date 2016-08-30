@@ -95,10 +95,10 @@ function showMovies($data) {
         $output .= '<p class="description">' . $description . '</p>';
         break;
       case 'admin':
-        $output .= '<tr class="data-row">';
+        $output .= '<tr id="movie-' . $id . '" class="data-row">';
         $output .= '<td><input class="data" type="text" name="title" value="' . $title . '"></td>';
         $output .= '<td><input class="data description" type="text" name="description" value="' . $description . '"></td>';
-        $output .= '<td class="delete-cell"><div class="delete"></div></td>';
+        $output .= '<td class="delete-cell"><div class="delete hidden"></div></td>';
         $output .= '</tr>';
         break;
     }

@@ -16,9 +16,14 @@
       <script src="js/remove-favorite.js"></script>
     <?php endif; ?>
     
-    <?php if ( isset($page) ) : ?>
+    <?php if ( $page == 'users' ) : ?>
       <script src="js/delete-user.js"></script>
       <script src="js/add-user.js"></script>
+    <?php endif; ?>
+    
+    <?php if ( $page == 'movies' ) : ?>
+      <script src="js/delete-movie.js"></script>
+      <script src="js/add-movie.js"></script>
     <?php endif; ?>
   </body>
 </html>
