@@ -17,7 +17,7 @@ $(document).ready(function() {
               $this.removeClass('delete').addClass('loader-small');
           },
           success: function() {
-              $('tr#user-' + $id).remove();
+              $('tr#user-' + $id + ', li#user-list-' + $id).remove();
           }
       })
    });

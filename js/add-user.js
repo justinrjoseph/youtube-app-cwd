@@ -24,10 +24,12 @@ $(document).ready(function() {
               $this.removeClass('insert').addClass('loader-small');
               $('.delete').removeClass('success').addClass('hidden');
           },
-          success: function() {
+          success: function(response) {
+              $userID = response;
+              
               $('input.new-data').val('');
               
-              $output =  '<tr class="data-row">';
+              $output =  '<tr id="user-' + $userID + '" class="data-row">';
               $output += '<td><input class="data" type="text" name="firstname" value="' + $firstname + '"></td>';
               $output += '<td><input class="data" type="text" name="lastname" value="' + $lastname + '"></td>';
               $output += '<td class="delete-cell"><div class="delete hidden"></div></td>';
@@ -35,8 +37,8 @@ $(document).ready(function() {
               
               $('.admin-table tr:last').before($output);
               
-              $output =  '<li>';
-              $output += '<a href="/?user_id=' + $id + '">' + $firstname + ' ' + $lastname + '</a>';
+              $output =  '<li id="user-list-' + $userID + '">';
+              $output += '<a href="/?user_id=' + $userID + '">' + $firstname + ' ' + $lastname + '</a>';
               $output += '</li>';
               
               $('.users-menu').append($output);

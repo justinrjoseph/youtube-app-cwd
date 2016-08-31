@@ -65,7 +65,7 @@ function showUsers($data) {
         $output .= '</'. $tag . '>';
         break;
       case 'all'; case 'others'; case 'current':
-        $output .= '<'. $tag . '>';
+        $output .= '<'. $tag . ' id="user-list-'. $id . '">';
         $output .= '<a href="/?user_id=' . $id . '">' . $firstname . ' ' . $lastname . '</a>';
         $output .= '</'. $tag . '>';
         break;
