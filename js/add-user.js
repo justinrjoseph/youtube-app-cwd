@@ -29,6 +29,9 @@ $(document).ready(function() {
               
               $('input.new-data').val('');
               
+              $firstname = $firstname.replace(/'/g, '&apos;');
+              $lastname = $lastname.replace(/'/g, '&apos;');
+              
               $output =  '<tr id="user-' + $userID + '" class="data-row">';
               $output += '<td><input class="data" type="text" name="firstname" value="' + $firstname + '"></td>';
               $output += '<td><input class="data" type="text" name="lastname" value="' + $lastname + '"></td>';

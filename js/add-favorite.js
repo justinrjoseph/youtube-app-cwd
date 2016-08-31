@@ -27,6 +27,9 @@ $(document).ready(function() {
             success: function() {
                 $requestRunning = false;
                 
+                $title = $title.replace(/'/g, '&apos;');
+                $description = $description.replace(/'/g, '&apos;');
+                
                 $output =  '<li title="' + $description + '" id="favorite-' + $id + '">';
                 $output += '<a href="/?user_id=' + $userID +'"&amp;movie_id="' + $id + '">';
                 $output += $title;
