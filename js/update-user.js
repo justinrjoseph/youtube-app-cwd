@@ -1,22 +1,31 @@
 $(document).ready(function() {
    
-   $(this).on('focus', '.data[name=firstname]', function() {
+   $(this).on('focus', '.data', function() {
        $this = $(this);
        $id = $this.closest('tr').attr('id').split('-');
        $id = $id[1];
        
-       $firstname = $this.val();
-       $lastname = $('tr#user-' + $id + ' .data[name=lastname]').val();
+       $thisName = $this.val();
+       $thisField = $this.attr('name');
+       
+       if ( $thisField === 'firstname' ) {
+           $otherField = 'lastname';
+       } else {
+           $otherField = 'firstname';
+       }
+       
+       $otherName = $('tr#user-' + $id + ' .data[name=' + $otherField + ']').val();
        
        $this.on('focusout', function() {
            $updatedName = $this.val();
            
-           if ( $firstname !== $updatedName ) {
+           if ( $thisName !== $updatedName ) {
                $.ajax({
                   url: 'ajax/update-user.ajax.php',
                   type: 'POST',
                   data: {
                       id: $id,
+                      thisField: $thisField,
                       updatedFirstName: $updatedName
                   },
                   beforeSend: function() {
@@ -33,7 +42,13 @@ $(document).ready(function() {
                });
                
               $output =  '<li id="user-list-' + $id + '">';
-              $output += '<a href="/?user_id=' + $id + '">' + $updatedName + ' ' + $lastname + '</a>';
+              
+              if ( $thisField === 'firstname' ) {
+                $output += '<a href="/?user_id=' + $id + '">' + $updatedName + ' ' + $otherName + '</a>';    
+              } else {
+                $output += '<a href="/?user_id=' + $id + '">' + $otherName + ' ' + $updatedName + '</a>';
+              }
+              
               $output += '</li>';
               
               $('li#user-list-' + $id).remove();
@@ -41,7 +56,7 @@ $(document).ready(function() {
               $('.users-menu li').tsort();
               
            }
-       })
-   })
+       });
+   });
     
 });
