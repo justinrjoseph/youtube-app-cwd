@@ -15,7 +15,7 @@
               <tr class="new-data-row">
                 <td><input class="new-data" type="text" name="firstname" value=""></td>
                 <td><input class="new-data" type="text" name="lastname" value=""></td>
-                <td class="insert-cell"><div class="insert"></div></td>
+                <td class="insert-cell"><div class="insert hidden"></div></td>
               </tr>                
             </table>
           </div>

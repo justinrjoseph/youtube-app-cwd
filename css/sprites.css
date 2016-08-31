@@ -92,6 +92,7 @@
 
 .insert:hover {
 	background-position: -21px -177px;
+	cursor: pointer;
 }
 
 .success {
