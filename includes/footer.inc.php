@@ -26,6 +26,7 @@
     <?php if ( $page == 'movies' ) : ?>
       <script src="js/delete-movie.js"></script>
       <script src="js/add-movie.js"></script>
+      <script src="js/update-movie.js"></script>
     <?php endif; ?>
   </body>
 </html>
