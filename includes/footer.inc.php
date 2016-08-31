@@ -20,6 +20,7 @@
     <?php if ( $page == 'users' ) : ?>
       <script src="js/delete-user.js"></script>
       <script src="js/add-user.js"></script>
+      <script src="js/update-user.js"></script>
     <?php endif; ?>
     
     <?php if ( $page == 'movies' ) : ?>
